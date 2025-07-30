@@ -48,3 +48,6 @@ from train import *
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 train_losses, val_losses, accuracy_list = train(model, train_loader, test_loader, criterion, optimizer, n_epochs=10, device=device )
 plot_metrics(train_losses, val_losses, accuracy_list)
+plot_metrics(train_losses, val_losses, accuracy_list)
+torch.save(model.state_dict(), 'cnn_mnist.pth')
+print("Model is saved ")
